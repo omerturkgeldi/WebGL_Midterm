@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Midterm Exam</title>
+    <!-- // TODO: get required variables -->
+    <!-- // TODO: calculate gl_Position appropriately  -->
+    <script id="vertex-shader" type="x-shader/x-vertex">
+
+        attribute vec4 vPosition; attribute vec4 vColor; varying vec4 fColor; void main() { gl_Position = vPosition; fColor = vColor; }
+    </script>
+
+    <!-- // TODO: get required variables -->
+    <!-- // TODO: assign color -->
+    <script id="fragment-shader" type="x-shader/x-fragment">
+
+        precision mediump float; varying vec4 fColor; void main() { gl_FragColor = fColor;}
+    </script>
+
+    <script type="text/javascript" src="../Common/webgl-utils.js"></script>
+    <script type="text/javascript" src="../Common/initShaders.js"></script>
+    <script type="text/javascript" src="../Common/MV.js"></script>
+    <script type="text/javascript" src="midterm.js"></script>
+</head>
+
+<body style="background-color:powderblue;">
+
+    <div>
+        Ömer Türkgeldi, 190316074
+    </div>
+    <table>
+        <td>
+            <canvas id="gl-canvas" width="650" height="650">
+		Oops ... your browser doesn't support the HTML5 canvas element
+	</canvas>
+        </td>
+        <td>
+            <div> <strong>---- Color ----</strong> </div><br>
+            <div>
+                R: 0<input id="redSlider" type="range" min="0" max="1" step="0.05" value="0.0" />1
+                <b id="redSliderLabel" style="font-size: x-large; color:blueviolet"></b>
+
+            </div>
+            <div>
+                G: 0<input id="greenSlider" type="range" min="0" max="1" step="0.05" value="0" />1
+                <b id="greenSliderLabel" style="font-size: x-large; color:blueviolet"></b>
+            </div>
+            <div>
+                B: 0<input id="blueSlider" type="range" min="0" max="1" step="0.05" value="0" />1
+                <b id="blueSliderLabel" style="font-size: x-large; color:blueviolet"></b>
+            </div>
+            <br>
+
+            <div> <strong>---- Transformations ----</strong> </div><br>
+
+            <div>Position</div>
+            <div>X: -1<input id="posX" type="range" min="-1" max="1" step="0.05" value="0" />1
+                <b id="posXLabel" style="font-size: x-large; color:blueviolet"></b>
+            </div>
+
+            <div>Y: -1<input id="posY" type="range" min="-1" max="1" step="0.05" value="0" />1
+                <b id="posYLabel" style="font-size: x-large;  color:blueviolet"></b>
+            </div>
+            <br>
+
+            <div>Scale</div>
+            <div>X: 0<input id="scaleX" type="range" min="0" max="2" step="0.05" value="1" />2
+                <b id="scaleXLabel" style="font-size: x-large;  color:blueviolet"></b>
+            </div>
+
+            <div>Y: 0<input id="scaleY" type="range" min="0" max="2" step="0.05" value="1" />2
+                <b id="scaleYLabel" style="font-size: x-large;  color:blueviolet"></b>
+            </div><br>
+
+
+            <br>
+        </td>
+
+    </table>
+    <div>
+</body>
+
+</html>
